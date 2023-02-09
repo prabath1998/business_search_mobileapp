@@ -32,9 +32,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 5,
+    marginTop: 10,
     marginHorizontal: 25,
     backgroundColor: 'white',
+    marginBottom:10,
     borderRadius: 40,
     padding: 3,
   },

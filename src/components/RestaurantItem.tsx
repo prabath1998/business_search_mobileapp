@@ -1,9 +1,14 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { withNavigation } from 'react-navigation';
 
-export default function RestaurantItem({ restaurant }) {
+function RestaurantItem({ restaurant, navigation }) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+    onPress={() => navigation.navigate('Restaurant',{id: restaurant.id})}
+    >
+      <View style={styles.container}>
       <Image style={styles.image} source={{ uri: restaurant.image_url }} />
       <View style={styles.infoContainer}>
         <Text style={styles.header}>{restaurant.name}</Text>
@@ -13,6 +18,7 @@ export default function RestaurantItem({ restaurant }) {
         </View>
       </View>
     </View>
+    </TouchableOpacity>
   );
 }
 
@@ -57,3 +63,6 @@ const styles = StyleSheet.create({
     color: "red",
   },
 });
+
+
+export default withNavigation(RestaurantItem);

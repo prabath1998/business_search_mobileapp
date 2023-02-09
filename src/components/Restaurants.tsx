@@ -19,7 +19,7 @@ function Restautants({term}) {
   console.log({data: data, loading, error});
 
   if (loading)
-    return <ActivityIndicator size="large" color="gold" marginVertical={50} />;
+    return <ActivityIndicator size="large" color="black" marginVertical={50} />;
 
   if (error) {
     return (
